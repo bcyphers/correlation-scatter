@@ -272,7 +272,7 @@ var initPoints = function(points) {
           .attr("visibility", "hidden")
           .attr("stroke", "black")
           .attr("stroke-width", 1)
-          .style("fill", function(d) {return colors[d.group];});
+          .style("fill", function(d) {return colors(d.group);});
 };
 
 ////////////////////////////////////////////////////
@@ -586,7 +586,7 @@ d3.json(jsonFile, function (data) {
 
     //reset colors of other data points
     scatPlot.selectAll(".points")
-            .style("fill", function(d) {return colors[d.group];});
+            .style("fill", function(d) {return colors(d.group);});
   };
 
   //add event handlers to the data points

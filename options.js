@@ -3,7 +3,8 @@
 ////////////////////
 
 //where is the data
-jsonFile = "dataNew.json";
+//jsonFile = "dataNew.json";
+jsonFile = "disqusData.json";
 
 //dimension of SVG
 var h = 450;
@@ -20,18 +21,22 @@ d3.select(self.frameElement).style("width", (w*2 + pad.left + pad.right + pad.mi
 d3.select(self.frameElement).style("height", (h + pad.top + pad.bottom + 20) + "px");
 
 //groups and colors for scatter plot
-var groups = ["group1", "group2", "group3"];
-var colors = {  
-                "group1": "crimson", 
-                "group2": "green", 
-                "group3": "darkslateblue"
-              };
+//var groups = ["group1", "group2", "group3"];
+var groups = ["Business", "Celebrity", "Channel", "Culture",
+    "Entertainment", "Games", "Living", "News", "null", "Sports", "Style",
+    "Tech"];
+//var colors = {  
+                //"group1": "crimson", 
+                //"group2": "green", 
+                //"group3": "darkslateblue"
+              //};
 /*var colors = {  
                 "group1": "rgb(50%, 0%, 0%)", 
                 "group2": "rgb(0%, 50%, 0%)", 
                 "group3": "rgb(0%, 0%, 50%)"
               };*/
 //var colors = [d3.rgb(150, 150, 150)];
+var colors = d3.scale.category20();
 
 //other graphic controls
 var scatTransTime = 300;  //time for transitions in the scatter plot
